@@ -1,0 +1,152 @@
+/* Тёмно-красный сигилкор вайб */
+body {
+    background-color: #0d0202; /* Очень темный, почти черный с красным отливом фон */
+    color: #e2e8f0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 100px;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: #ef4444; /* Неоново-красный главный заголовок */
+    font-size: 40px;
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.5); /* Легкое свечение */
+}
+
+p {
+    font-size: 20px;
+    color: #9ca3af;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #140505; /* Темно-бордовая шапка */
+    border-bottom: 1px solid #7f1d1d; /* Темно-красная граница */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+.logo {
+    color: #ef4444;
+    font-weight: bold;
+    font-size: 18px;
+    text-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+.nav-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #ef4444;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #7f1d1d; /* Кроваво-красная кнопка */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.2s;
+    border: 1px solid #ef4444;
+}
+
+.btn:hover {
+    background-color: #991b1b;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.card {
+    background-color: #140505;
+    padding: 20px;
+    border-radius: 12px;
+    width: 200px;
+    border: 1px solid #7f1d1d;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #ef4444;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
+}
+
+.card h3 {
+    color: #ef4444;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 15px;
+}
+/* Контейнер фоновых сигилов */
+.sigils {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.sigils span {
+    position: absolute;
+    bottom: -50px;
+    color: rgba(239, 68, 68, 0.35); /* Мягкий полупрозрачный красный */
+    font-size: 32px;
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+    animation: floatUpSymbols linear infinite;
+}
+
+/* Раскидываем по ширине и задаем разную скорость */
+.sigils span:nth-child(1) { left: 10%; animation-duration: 10s; animation-delay: 0s; }
+.sigils span:nth-child(2) { left: 25%; animation-duration: 14s; animation-delay: 3s; }
+.sigils span:nth-child(3) { left: 40%; animation-duration: 8s;  animation-delay: 1s; }
+.sigils span:nth-child(4) { left: 55%; animation-duration: 12s; animation-delay: 4s; }
+.sigils span:nth-child(5) { left: 70%; animation-duration: 15s; animation-delay: 2s; }
+.sigils span:nth-child(6) { left: 85%; animation-duration: 9s;  animation-delay: 2.5s; }
+.sigils span:nth-child(7) { left: 15%; animation-duration: 13s; animation-delay: 5s; }
+.sigils span:nth-child(8) { left: 90%; animation-duration: 11s; animation-delay: 1.5s; }
+
+/* Плавный подъем вверх */
+@keyframes floatUpSymbols {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
